@@ -1,0 +1,10 @@
+传统的都是一对一的subset selection，有xxxxx问题; 此处是一对多的关系;
+x_ij
+
+方向画出来
+左到右一对多，右到左一对一 => 左到右一对多，右到左一堆多
+reference：为什么使用ground truth，通过grouth truth选择出来尽量高质量、覆盖范围好的规则。
+
+问题不一样，因此传统的subset selection formulation不能直接使用，现在是一对多
+1. 每条样本至少被一条规则覆盖
+2. 或者给个majority
