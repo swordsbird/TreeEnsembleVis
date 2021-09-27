@@ -1,0 +1,22 @@
+说明：
+数据集中Age未变，Gender将Male、Female对应编码为1、0，其他属性将Yes、No对应编码为1、0，class将Positive、Negative对应编码为1、0
+
+feature解释：
+注：以下由Yes、No表示的属性均对应表示是否有该症状
+Age 年龄
+Gender 性别
+Polyuria 多尿症
+Polydipsia 多饮
+sudden weight loss 体重骤减
+weakness 虚弱
+Polyphagia 多食
+Genital thrush 生殖器鹅口疮
+visual blurring 视觉模糊
+Itching 瘙痒
+Irritability 易怒
+delayed healing 延迟愈合
+partial paresis 部分瘫痪
+muscle stiffness 肌肉僵硬
+Alopecia 脱发
+Obesity 肥胖
+class中Positive、Negative对应表示糖尿病阳性、阴性
