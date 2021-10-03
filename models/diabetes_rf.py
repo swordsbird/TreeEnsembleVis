@@ -1,12 +1,11 @@
-# diabetes LightGBM model
-# Test 0.9846153846153847
+# diabetes RF model
+# Test 0.9769230769230769
 # Train 1.0
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pandas as pd
 from imblearn.over_sampling import SMOTE
-from lightgbm import LGBMClassifier
-from models.tree_extractor import path_extractor
+from sklearn.ensemble import RandomForestClassifier
 
 random_state = 114
 data_table = pd.read_csv('data/diabetes.csv')
@@ -21,18 +20,13 @@ sm = SMOTE(random_state=random_state)
 X_train, y_train = sm.fit_resample(X_train, y_train)
 
 parameters = {
-    'n_estimators': 400,
-    'learning_rate': 0.1,
-    'num_leaves': 800,
+    'n_estimators': 100,
     'max_depth': 10,
-    'min_data_in_leaf': 20,
-    'lambda_l1': 0.02,
-    'bagging_fraction': 0.87,
-    'bagging_freq': 39,
-    'feature_fraction': 0.54,
+    'random_state': random_state,
+    'max_features': None,
 }
 
-clf = LGBMClassifier(**parameters)
+clf = RandomForestClassifier(**parameters)
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
